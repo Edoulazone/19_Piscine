@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:50:21 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/14 15:54:49 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/27 14:39:09 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -30,4 +30,3 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
-

@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:35:19 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:50 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/26 18:54:43 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/26 18:56:05 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int	main(int ac, char **av)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	(void)ac;
-	while (av[0][i])
-	{
-		write(1, &av[0][i], 1);
+	while (str[i])
 		i++;
-	}
-	write(1, "\n", 1);
-	return (0);
+	return (i);
 }

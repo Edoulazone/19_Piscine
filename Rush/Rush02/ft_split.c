@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 12:56:49 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/23 11:38:14 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/24 16:31:07 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/24 19:13:13 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
 
 int	issep(char c, char *charset)
@@ -104,7 +105,7 @@ int	main(void)
 
 	j = 0;
 	string = "Salut/Les'Petits-Loups";
-	sep = "/'-";
+	sep = "'\n'";
 	tab = ft_split(string, sep);
 	while (tab[j])
 	{

@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 21:36:00 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/16 12:54:20 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:45:46 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -18,9 +18,11 @@ int	*ft_range(int min, int max)
 	int	j;
 
 	if (min >= max)
-		return (0);
+		return (NULL);
 	len = max - min;
 	tab = (int *)malloc(sizeof(int) * len);
+	if (tab == NULL)
+		return (NULL);
 	j = 0;
 	while (min <= max)
 	{
@@ -30,7 +32,7 @@ int	*ft_range(int min, int max)
 	}
 	return (tab);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -39,13 +41,15 @@ int	main(void)
 	int	maximum;
 	int	i;
 
-	minimum = 1;
-	maximum = 12;
+	minimum = -8;
+	maximum = -9;
 	i = 0;
-	while (ft_range(minimum, maximum)[i] <= maximum)
+	while ( i <= maximum - minimum)
 	{
 		printf("%d", ft_range(minimum, maximum)[i]);
 		i++;
 	}
+	free(ft_range(minimum, maximum));
 	return (0);
 }
+*/

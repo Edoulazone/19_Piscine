@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 12:56:49 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/23 11:38:14 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/26 19:37:10 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/26 19:38:37 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
 
 int	issep(char c, char *charset)
@@ -61,8 +62,10 @@ char	**make_tab(char *str, char *charset, char **tab)
 	j = 0;
 	while (str[c] && j < nbr_words(str, charset))
 	{
-		i = 0;
+		i = -1;
 		tab[j] = (char *)malloc(sizeof(char) * word_len(str, c, charset));
+		if (tab[j] == NULL)
+			return (NULL);
 		while (issep(str[c], charset) == 1 && str[c])
 		{
 			tab[j][i] = str[c];
@@ -92,26 +95,3 @@ char	**ft_split(char *str, char *charset)
 	tab[nbr_words(str, charset)] = 0;
 	return (tab);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*string;
-	char	*sep;
-	int		j;
-	char	**tab;
-
-	j = 0;
-	string = "Salut/Les'Petits-Loups";
-	sep = "/'-";
-	tab = ft_split(string, sep);
-	while (tab[j])
-	{
-		printf("%s", tab[j]);
-		j++;
-	}
-	free(ft_split(string, sep));
-	return (0);
-}
-*/

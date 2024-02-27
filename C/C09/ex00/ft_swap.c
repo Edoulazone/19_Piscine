@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:35:19 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:50 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/26 18:53:33 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/26 18:53:51 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int	main(int ac, char **av)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
+	int	swap;
 
-	i = 0;
-	(void)ac;
-	while (av[0][i])
-	{
-		write(1, &av[0][i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-	return (0);
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }

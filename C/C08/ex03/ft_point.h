@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:35:19 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:50 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/26 18:02:03 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/26 18:45:50 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int	main(int ac, char **av)
+#ifndef FT_POINT_H
+# define FT_POINT_H
+
+typedef struct set_point
 {
-	int	i;
+	int	x;
+	int	y;
+} t_point
 
-	i = 0;
-	(void)ac;
-	while (av[0][i])
-	{
-		write(1, &av[0][i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-	return (0);
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:13:08 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/14 15:28:27 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:02:53 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main(int ac, char **av)
 		while (av[j][i])
 		{
 			write(1, &av[j][i], 1);
-			write(1, "\n", 1);
 			i++;
 		}
+		write(1, "\n", 1);
 		j--;
 	}
 	return (0);

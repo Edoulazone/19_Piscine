@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:35:19 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:50 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/14 16:26:20 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/21 14:15:55 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int	main(int ac, char **av)
+int	ft_iterative_power(int nb, int power)
 {
-	int	i;
+	int	nbr;
 
-	i = 0;
-	(void)ac;
-	while (av[0][i])
+	nbr = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (power > 1)
 	{
-		write(1, &av[0][i], 1);
-		i++;
+		nb = nb * nbr;
+		power--;
 	}
-	write(1, "\n", 1);
+	return (nb);
+}
+/*
+int	main(void)
+{
 	return (0);
 }
+*/

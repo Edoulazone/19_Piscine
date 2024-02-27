@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:35:19 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:50 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/26 18:56:30 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/26 18:56:35 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-int	main(int ac, char **av)
+void	ft_putch(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	(void)ac;
-	while (av[0][i])
+	while (1)
 	{
-		write(1, &av[0][i], 1);
+		if (str[i] == '\0')
+			return ;
+		ft_putch(str[i]);
 		i++;
 	}
-	write(1, "\n", 1);
-	return (0);
 }

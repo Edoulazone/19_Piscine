@@ -6,13 +6,13 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:04:28 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/22 12:56:18 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:52:12 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdlib.h>
+#include <stdlib.h>
 
-int	convert(int num, char *base)
+int	convert(int num, char *base, char *res, int i)
 {
 	int	long_base;
 	int	nb;
@@ -21,10 +21,19 @@ int	convert(int num, char *base)
 	nb = 0;
 	while (base[long_base])
 		long_base++;
-	while (num >= long_base)
+	if (nb < 0)
 	{
-		nb = nb * long_base + 
-
+		result[i] = '-';
+		i++;
+		nb = -num;
+	}
+	else
+		nb = num;
+	if (nb >= long_base)
+		convert(nb / long_base, str, res, i - 1);
+	res[i] = base[nb % long_base];
+	return (i);
+}
 
 int	find_num_in_base(char c, char *base)
 {
@@ -60,7 +69,6 @@ int	num_to_base_len(int num, char *base)
 	return (l);
 }
 
-
 int	ft_atoi_base(char *str, char *base)
 {
 	int	i;
@@ -88,16 +96,3 @@ int	ft_atoi_base(char *str, char *base)
 		return (-result);
 	return (result);
 }
-
-char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
-{
-	char	*res;
-	int		num;
-	int		i;
-
-	if (!nbr || !base_from || !base_to)
-		return (0);
-	num = ft_atoi_base(nbr, base_from);
-	res = malloc(sizeof(char) * num_to_base_len(num, base_to));
-	num = convert(num, base_to)
-	

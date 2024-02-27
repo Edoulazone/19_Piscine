@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:35:19 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:50 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/14 16:02:35 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/20 17:34:49 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int	main(int ac, char **av)
+int	ft_iterative_factorial(int nb)
 {
 	int	i;
 
-	i = 0;
-	(void)ac;
-	while (av[0][i])
+	i = nb;
+	if (nb < 0)
+		return (0);
+	if (nb == 1 || nb == 0)
+		return (1);
+	while (1 < nb)
 	{
-		write(1, &av[0][i], 1);
-		i++;
+		i = i * (nb - 1);
+		nb--;
 	}
-	write(1, "\n", 1);
-	return (0);
+	return (i);
 }

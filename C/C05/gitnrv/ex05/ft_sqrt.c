@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:35:19 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 15:56:50 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/14 17:46:42 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/22 15:21:31 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int	main(int ac, char **av)
+int	ft_sqrt(int nb)
 {
 	int	i;
 
-	i = 0;
-	(void)ac;
-	while (av[0][i])
-	{
-		write(1, &av[0][i], 1);
+	if (nb < 0)
+		return (0);
+	i = 1;
+	while (i * i < nb && i <= 46340)
 		i++;
-	}
-	write(1, "\n", 1);
+	if (i * i == nb)
+		return (i);
+	else
+		return (0);
+}
+/*
+# include <stdio.h>
+int	main(void)
+{
+	printf("%d", ft_sqrt(160000));
 	return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 17:31:49 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/15 18:40:37 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:20:50 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -25,7 +25,7 @@ char	**ft_tab_sort(int number, char **tab)
 {
 	int		j;
 	char	*wait;
-	
+
 	j = 1;
 	while (j < number - 1)
 	{
@@ -44,8 +44,8 @@ char	**ft_tab_sort(int number, char **tab)
 
 int	main(int ac, char **av)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	**tab;
 
 	tab = ft_tab_sort(ac, av);
