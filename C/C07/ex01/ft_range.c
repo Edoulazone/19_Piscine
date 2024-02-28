@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 21:36:00 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 16:45:46 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:25:45 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -24,7 +24,7 @@ int	*ft_range(int min, int max)
 	if (tab == NULL)
 		return (NULL);
 	j = 0;
-	while (min <= max)
+	while (min < max)
 	{
 		tab[j] = min;
 		min++;

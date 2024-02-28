@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 19:37:10 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/26 19:38:37 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/28 19:39:07 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,23 +59,20 @@ char	**make_tab(char *str, char *charset, char **tab)
 	int	c;
 
 	c = 0;
-	j = 0;
-	while (str[c] && j < nbr_words(str, charset))
+	j = -1;
+	while (str[c] && (++j < nbr_words(str, charset)))
 	{
-		i = -1;
+		i = 0;
 		tab[j] = (char *)malloc(sizeof(char) * word_len(str, c, charset));
 		if (tab[j] == NULL)
 			return (NULL);
-		while (issep(str[c], charset) == 1 && str[c])
-		{
-			tab[j][i] = str[c];
-			i++;
+		while (issep(str[c], charset) == 0)
 			c++;
-		}
+		while (issep(str[c], charset) == 1 && str[c])
+			tab[j][i++] = str[c++];
 		while (issep(str[c], charset) == 0)
 			c++;
 		tab[j][i] = '\0';
-		j++;
 	}
 	return (tab);
 }
@@ -95,3 +92,26 @@ char	**ft_split(char *str, char *charset)
 	tab[nbr_words(str, charset)] = 0;
 	return (tab);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*string;
+	char	*sep;
+	int		j;
+	char	**tab;
+
+	j = 0;
+	string = "ht/ a-  gh  ";
+	sep = " /-";
+	tab = ft_split(string, sep);
+	while (tab[j])
+	{
+		printf("%s", tab[j]);
+		j++;
+	}
+	free(ft_split(string, sep));
+	return (0);
+}
+*/

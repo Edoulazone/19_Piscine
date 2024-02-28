@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:02:03 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/26 18:45:50 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:06:36 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ typedef struct set_point
 {
 	int	x;
 	int	y;
-} t_point
+}	t_point;
 
 #endif

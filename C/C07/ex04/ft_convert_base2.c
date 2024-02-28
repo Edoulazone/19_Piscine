@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:06:57 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/27 20:37:28 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:48:57 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,12 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	res[i + 1] = '\0';
 	return (res);
 }
-
 /*
 #include <stdio.h>
 
 int	main(int ac, char **av)
 {
-	printf(""%s", ft_convert_base(av[1], av[2], av[3]));
-	return (0);
+	printf("%s", ft_convert_base(av[1], av[2], av[3]));
+	eturn (0);
 }
 */

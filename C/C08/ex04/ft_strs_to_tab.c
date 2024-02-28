@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 19:40:08 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/26 19:53:26 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/28 22:00:14 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
 char	*ft_strcpy(char *str, int size)
 {
 	char	*dest;
@@ -37,7 +38,7 @@ char	*ft_strcpy(char *str, int size)
 	return (dest);
 }
 
-struct	s_stock_str *ft_strs_to_tab(int ac, char **av)
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	t_stock_str	*res;
 	int			i;

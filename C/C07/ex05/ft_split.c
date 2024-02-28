@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 12:56:49 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/23 11:38:14 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:05:59 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -58,21 +58,20 @@ char	**make_tab(char *str, char *charset, char **tab)
 	int	c;
 
 	c = 0;
-	j = 0;
-	while (str[c] && j < nbr_words(str, charset))
+	j = -1;
+	while (str[c] && (++j < nbr_words(str, charset)))
 	{
 		i = 0;
 		tab[j] = (char *)malloc(sizeof(char) * word_len(str, c, charset));
-		while (issep(str[c], charset) == 1 && str[c])
-		{
-			tab[j][i] = str[c];
-			i++;
+		if (tab[j] == NULL)
+			return (NULL);
+		while (issep(str[c], charset) == 0)
 			c++;
-		}
+		while (issep(str[c], charset) == 1 && str[c])
+			tab[j][i++] = str[c++];
 		while (issep(str[c], charset) == 0)
 			c++;
 		tab[j][i] = '\0';
-		j++;
 	}
 	return (tab);
 }
@@ -103,8 +102,8 @@ int	main(void)
 	char	**tab;
 
 	j = 0;
-	string = "Salut/Les'Petits-Loups";
-	sep = "/'-";
+	string = "ht/ a-  gh  ";
+	sep = " /-";
 	tab = ft_split(string, sep);
 	while (tab[j])
 	{

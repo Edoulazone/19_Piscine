@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:04:28 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/26 16:52:12 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:44:13 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	convert(int num, char *base, char *res, int i)
 		long_base++;
 	if (nb < 0)
 	{
-		result[i] = '-';
+		res[i] = '-';
 		i++;
 		nb = -num;
 	}
 	else
 		nb = num;
 	if (nb >= long_base)
-		convert(nb / long_base, str, res, i - 1);
+		convert(nb / long_base, base, res, i - 1);
 	res[i] = base[nb % long_base];
 	return (i);
 }
@@ -91,7 +91,7 @@ int	ft_atoi_base(char *str, char *base)
 		i++;
 	}
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
-		resultat = resultat * long_base + find_num_in_base(str[i], base);
+		result = result * long_base + find_num_in_base(str[i++], base);
 	if (pos % 2 == 1)
 		return (-result);
 	return (result);
