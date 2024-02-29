@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 17:58:21 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/29 14:55:26 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/29 15:41:28 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/29 15:56:14 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+void	ft_foreach(int *tab, int length, void(*f)(int))
+{
+	int	i;
 
-# include <unistd.h>
-
-# define EVEN(nbr) nbr % 2 == 0 
-# define SUCCESS 0
-# define FALSE 0
-# define TRUE 1
-
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-
-typedef int	t_bool;
-
-#endif
+	i = -1;
+	while (tab[++i])
+		(*f)(tab[i]);
+}

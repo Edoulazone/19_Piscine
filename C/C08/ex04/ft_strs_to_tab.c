@@ -6,13 +6,20 @@
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 19:40:08 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/28 22:00:14 by eschmitz         ###   ########.fr       */
+/*   Updated: 2024/02/29 18:21:48 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stock_str.h"
-
+/*
+typedef struct	s_stock_str
+{
+	int		size;
+	char	*str;
+	char	*copy;
+}	t_stock_str;
+*/
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -58,3 +65,16 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	res[i].copy = 0;
 	return (res);
 }
+/*
+#include <stdio.h>
+
+int	main(int ac, char **av)
+{
+	struct s_stock_str	*michel;
+	michel = ft_strs_to_tab(ac, av);
+	int	i = -1;
+	while (michel[++i].str != 0)
+		printf("%d\n%s\n%s\n", michel[i].size, michel[i].str, michel[i].copy);
+	return (0);
+}
+*/

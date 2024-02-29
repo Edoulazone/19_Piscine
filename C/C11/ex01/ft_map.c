@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmitz <eschmitz@students.s19.be>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 17:58:21 by eschmitz          #+#    #+#             */
-/*   Updated: 2024/02/29 14:55:26 by eschmitz         ###   ########.fr       */
+/*   Created: 2024/02/29 15:51:51 by eschmitz          #+#    #+#             */
+/*   Updated: 2024/02/29 15:56:41 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+int	*ft_map(int *tab, int length, int(*f)(int))
+{
+	int	i;
+	int	*res;
 
-# include <unistd.h>
-
-# define EVEN(nbr) nbr % 2 == 0 
-# define SUCCESS 0
-# define FALSE 0
-# define TRUE 1
-
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-
-typedef int	t_bool;
-
-#endif
+	res = (int *)malloc(sizeof(int) * length);
+	if (res == NULL)
+		return (NULL);
+	i = -1;
+	while (tab[++i])
+		res[i] = (*f)(tab[i]);
+	return (res);
+}
